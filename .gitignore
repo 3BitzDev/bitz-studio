@@ -1,0 +1,12 @@
+# Node
+dist/
+.DS_Store
+
+node_modules/
+bun.lockb
+dist/
+.DS_Store
+*.tsbuildinfo
+
+# VS Code
+.vscode/

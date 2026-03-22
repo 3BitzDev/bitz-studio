@@ -1,0 +1,124 @@
+/* BitzUI 入口样式 */
+@import "tailwindcss";
+
+@variant dark ([data-theme="dark"] &);
+
+@plugin "@iconify/tailwind4";
+
+@plugin "daisyui" {
+  themes: light --default, dark;
+}
+@plugin "daisyui/theme" {
+  name: "light";
+
+  --color-base-100: #ffffff;
+  --color-base-200: #f3f4f6;
+  --color-base-300: #ccced2;
+  --color-base-content: oklch(20% 0.05 240);
+  --color-primary: "#7459E5";
+  --color-primary-content: oklch(98% 0.01 240);
+  --color-secondary: "#f4569d";
+  --color-secondary-content: oklch(98% 0.01 200);
+  --color-accent: oklch(65% 0.25 160);
+  --color-accent-content: oklch(98% 0.01 160);
+  --color-neutral: oklch(50% 0.05 240);
+  --color-neutral-content: oklch(98% 0.01 240);
+  --color-info: oklch(70% 0.2 220);
+  --color-info-content: oklch(98% 0.01 220);
+  --color-success: "#2dca73";
+  --color-success-content: oklch(98% 0.01 140);
+  --color-warning: "#f97c07";
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: oklch(65% 0.3 30);
+  --color-error-content: oklch(98% 0.01 30);
+  --main-gradient: linear-gradient(130deg, #24c6dc, #7459e5 41.07%, #f96db0 76.05%);
+
+  --color-box-border: #e5e7eb;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  color-scheme: dark; /* color of browser-provided UI */
+
+  --color-base-100: #232530;
+  --color-base-200: #1d2026;
+  --color-base-300: #131516;
+  --color-primary: "#7961EC";
+  --color-secondary: "#f96db0";
+  --main-gradient: linear-gradient(130deg, #24c6dc, #5433ff 41.07%, #ff0099 76.05%);
+  --color-box-border: #374151;
+}
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  [data-theme="light"] {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: #fff;
+      --input-border: #fff;
+    }
+  }
+
+  [data-theme="dark"] {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+      border-color: #1b1e24;
+      --input-border: #1b1e24;
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-800;
+}
+
+/* 可选：添加自定义组件类名（如果需要与 DaisyUI 类名区分） */
+.bitz-btn {
+  @apply btn;
+}
+
+.bitz-card {
+  @apply card;
+}
+
+.bitz-gradient {
+  background: linear-gradient(130deg, rgb(36, 198, 220), #8357ff 21.07%, rgb(255, 0, 153) 96.05%);
+}
+
+/* 其他自定义组合，可以按需添加 */

@@ -1,0 +1,13 @@
+{
+  "name": "@bitz-studio/builder",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "echo \"start builder (placeholder)\"",
+    "build": "tsc --project tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@bitz-studio/core": "workspace:*"
+  }
+}

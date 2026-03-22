@@ -1,0 +1,10 @@
+node_modules/
+dist/
+**/dist/
+.venv/
+.turbo/
+.next/
+build/
+coverage/
+*.min.js
+/.pnp.*

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+**/dist/
+build/
+coverage/
+.next/
+.turbo/
+# Ignore auto-generated files
+src/app/store/services/*

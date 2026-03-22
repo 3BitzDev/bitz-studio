@@ -1,0 +1,26 @@
+{
+  "name": "@bitz-studio",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "bun install",
+    "build": "sh -c 'for d in packages/*; do (cd \"$d\" && bun run build); done'",
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx --ignore-path .eslintignore || true",
+    "lint:fix": "eslint . --ext .ts,.tsx,.js,.jsx --fix --ignore-path .eslintignore || true",
+    "format": "prettier --write .",
+    "test": "sh -c 'for d in packages/*; do (cd \"$d\" && bun run test || true); done'"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0",
+    "@types/node": "^22.13.10",
+    "eslint": "^8.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "prettier": "^2.8.8",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^4.2.1"
+  }
+}
